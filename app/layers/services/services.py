@@ -42,9 +42,15 @@ def filterByCharacter(name):
 
     for card in getAllImages():
         # debe verificar si el name está contenido en el nombre de la card, antes de agregarlo al listado de filtered_cards.
-        filtered_cards.append(card)
-
+       
+        if name.lower() in card.name.lower(): #Para hacer que el nombre escrito en el buscador coincida con el nombre del pokemon los colocamos a ambos en minusculas (con lower)
+                                              # Y verificamos  si name esta en card name
+            filtered_cards.append(card)       
+            #Si el nombre coincide, agrega esa card a la lista filtered cards.
     return filtered_cards
+
+
+
 
 # función que filtra las cards según su tipo.
 def filterByType(type_filter):
